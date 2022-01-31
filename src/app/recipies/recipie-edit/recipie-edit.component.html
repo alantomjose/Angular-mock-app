@@ -1,0 +1,106 @@
+<div class="row">
+  <div class="col-xs-6">
+    <form [formGroup]="recipieForm" (ngSubmit)="onSubmit()">
+      <div class="row">
+        <div class="col-xs-12">
+          <button
+            type="submit"
+            class="btn btn-success"
+            [disabled]="!recipieForm.valid"
+          >
+            Save
+          </button>
+          <button type="button" class="btn btn-danger" (click)="onCancel()">
+            Cancel
+          </button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input
+              type="text"
+              id="name"
+              class="form-control"
+              formControlName="name"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label for="imagePath">Image URL</label>
+            <input
+              type="text"
+              id="imagePath"
+              class="form-control"
+              formControlName="imagePath"
+              #imgURL
+            />
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <img [src]="imgURL.value" alt="image" class="img-responisve" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label for="description">description</label>
+            <input
+              type="text-area"
+              id="description"
+              class="form-control"
+              formControlName="description"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="row" formArrayName="ingredients">
+        <div class="col-xs-12">
+          <div
+            class="row"
+            *ngFor="let ingrCtrl of controls; let i = index"
+            [formGroup]="ingrCtrl"
+          >
+            <div class="col-xs-8">
+              <input
+                type="text"
+                id="ingredient"
+                class="form-control"
+                formControlName="name"
+              />
+            </div>
+            <div class="col-xs-2">
+              <input
+                type="text"
+                id="ingredient"
+                class="form-control"
+                formControlName="amount"
+              />
+            </div>
+            <div class="col-xs-2">
+              <button class="btn btn-danger">X</button>
+            </div>
+          </div>
+        </div>
+        <hr />
+        <div class="row">
+          <div class="col-xs-12">
+            <button
+              class="btn btn-success"
+              type="button"
+              (click)="onAddIngred()"
+            >
+              Add Ingedient
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
