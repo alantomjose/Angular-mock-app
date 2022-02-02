@@ -1,0 +1,82 @@
+$green: rgb(0, 153, 69);
+$blue: rgb(58, 135, 223);
+
+@mixin button-gen($color) {
+  border-radius: 5px;
+  color: white;
+  padding: 10px;
+  margin: 10px;
+  border: none;
+  background-color: $color;
+  &:hover {
+    background-color: darken($color, 10%);
+    // background-color: rgb(11, 124, 60);
+    color: white;
+  }
+  &:disabled {
+    background-color: darken($color, 7%);
+    color: rgb(199, 199, 199);
+  }
+}
+
+.authenticate {
+  background-color: rgb(72, 206, 132);
+  margin: 20px;
+  padding: 20px;
+  border-radius: 10px;
+
+  form {
+    color: white;
+  }
+
+  button {
+    @include button-gen($green);
+  }
+}
+
+.recipie-list {
+  button {
+    @include button-gen($green);
+  }
+}
+
+.recipie-list-items {
+  margin: 0px 20px;
+}
+
+.recipie-item {
+  margin: 10px auto;
+  div img {
+    border-radius: 10px;
+  }
+}
+
+.recipie-details {
+  margin: 20px;
+  div img {
+    border-radius: 10px;
+  }
+  button {
+    margin: 10px 0px;
+  }
+
+  h1 {
+    color: darken($green, 15%);
+  }
+}
+
+button {
+  @include button-gen($green);
+}
+
+.ing-list {
+  margin: 0px 15px;
+  ul li {
+    margin: 5px 0px;
+    background-color: rgb(215, 255, 227);
+    border: none;
+    &:hover {
+      background-color: rgb(185, 247, 200);
+    }
+  }
+}

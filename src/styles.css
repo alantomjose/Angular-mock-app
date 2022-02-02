@@ -1,1 +1,76 @@
-/* You can add global styles to this file, and also import other style files */
+.authenticate {
+  background-color: #48ce84;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 10px; }
+  .authenticate form {
+    color: white; }
+  .authenticate button {
+    border-radius: 5px;
+    color: white;
+    padding: 10px;
+    margin: 10px;
+    border: none;
+    background-color: #009945; }
+    .authenticate button:hover {
+      background-color: #00662e;
+      color: white; }
+    .authenticate button:disabled {
+      background-color: #007535;
+      color: #c7c7c7; }
+
+.recipie-list button {
+  border-radius: 5px;
+  color: white;
+  padding: 10px;
+  margin: 10px;
+  border: none;
+  background-color: #009945; }
+  .recipie-list button:hover {
+    background-color: #00662e;
+    color: white; }
+  .recipie-list button:disabled {
+    background-color: #007535;
+    color: #c7c7c7; }
+
+.recipie-list-items {
+  margin: 0px 20px; }
+
+.recipie-item {
+  margin: 10px auto; }
+  .recipie-item div img {
+    border-radius: 10px; }
+
+.recipie-details {
+  margin: 20px; }
+  .recipie-details div img {
+    border-radius: 10px; }
+  .recipie-details button {
+    margin: 10px 0px; }
+  .recipie-details h1 {
+    color: #004d23; }
+
+button {
+  border-radius: 5px;
+  color: white;
+  padding: 10px;
+  margin: 10px;
+  border: none;
+  background-color: #009945; }
+  button:hover {
+    background-color: #00662e;
+    color: white; }
+  button:disabled {
+    background-color: #007535;
+    color: #c7c7c7; }
+
+.ing-list {
+  margin: 0px 15px; }
+  .ing-list ul li {
+    margin: 5px 0px;
+    background-color: #d7ffe3;
+    border: none; }
+    .ing-list ul li:hover {
+      background-color: #b9f7c8; }
+
+/*# sourceMappingURL=styles.css.map */

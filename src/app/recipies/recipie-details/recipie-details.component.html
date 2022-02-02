@@ -1,53 +1,55 @@
-<div class="row">
-  <div class="col-sm-12">
-    <img
-      [src]="recipie.imagePath"
-      alt="Image"
-      class="image-responsive"
-      style="max-height: 300px"
-    />
-  </div>
-</div>
-<div class="row">
-  <div class="col-sm-12">
-    <h1 class="heading">{{ recipie.name }}</h1>
-  </div>
-</div>
-<div class="row">
-  <div class="col-xs-12">
-    <div class="btn-group" appDropDown>
-      <button class="btn btn-primary dropdown-toggle">Manage Recipie</button>
-      <ul class="dropdown-menu">
-        <li>
-          <a href="#" (click)="addIngredients()" class="">to Shopping List</a>
-        </li>
-        <li><a [routerLink]="['edit']" class="">Edit Recipie</a></li>
-        <li>
-          <a class="" (click)="deleteRecipie()">Delete Recipie</a>
-        </li>
-      </ul>
+<div class="recipie-details col-sm-6">
+  <div class="row">
+    <div class="col-sm-12 recipie-details">
+      <img
+        [src]="recipie.imagePath"
+        alt="Image"
+        class="image-responsive"
+        style="max-height: 300px"
+      />
     </div>
-  </div>
-</div>
-<div class="row">
-  <div class="col-sm-12">
-    <div class="heading">{{ recipie.description }}</div>
-  </div>
-</div>
-<div class="row">
-  <div class="col-sm-12">
-    <div class="heading">Ingridients</div>
   </div>
   <div class="row">
     <div class="col-sm-12">
-      <ul class="list-group">
-        <li
-          *ngFor="let ingredient of recipie.ingredients"
-          class="list-group-item"
-        >
-          {{ ingredient.name }} - {{ ingredient.amount }}
-        </li>
-      </ul>
+      <h1 class="heading">{{ recipie.name }}</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="btn-group" appDropDown>
+        <button class="dropdown-toggle">Manage Recipie</button>
+        <ul class="dropdown-menu">
+          <li>
+            <a href="#" (click)="addIngredients()" class="">to Shopping List</a>
+          </li>
+          <li><a [routerLink]="['edit']" class="">Edit Recipie</a></li>
+          <li>
+            <a class="" (click)="deleteRecipie()">Delete Recipie</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="heading">{{ recipie.description }}</div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <h3 class="h4">Ingridients</h3>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 ing-list">
+        <ul class="list-group">
+          <li
+            *ngFor="let ingredient of recipie.ingredients"
+            class="list-group-item"
+          >
+            {{ ingredient.name }} - {{ ingredient.amount }}
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>
